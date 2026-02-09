@@ -8,6 +8,7 @@ wizardB.ShowStats();
 
 wizardA.Attack(wizardB);
 wizardB.Attack(wizardA);
+wizardA.heal();
 wizardA.Attack(wizardB);
 
 Console.WriteLine("Permainan berakhir.....\n");
@@ -44,6 +45,24 @@ public class wizard
         Console.WriteLine($"{Name} menyerang {wizardlawanObj.Name}");
         Console.WriteLine($"sisa energi {wizardlawanObj.Name} adalah {wizardlawanObj.Energy}");
     }
+    
+    public void heal()
+    {
+        Energy += 5;
+        if(Energy < 100)
+        {
+            Energy += 5;
+            Console.WriteLine($"{Name} melakukan heal energi meningkatkan menjadi {Energy}");
+        }
+        else
+        {
+            Energy = 100;
+            Console.WriteLine("Energi sudah penuh");
+        }
+
+    }
 }
+
+
 
 
